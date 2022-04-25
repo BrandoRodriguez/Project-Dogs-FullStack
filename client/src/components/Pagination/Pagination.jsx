@@ -1,9 +1,16 @@
 import './Pagination.css'
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import slice_dogs from './functions'
 
-function Pagination(current_page) {
+function Pagination() {
 
-    const { api_breeds, searchBreed} = useSelector((state) => state);
+    const dispatch = useDispatch()
+
+    const { searchBreed, current_page} = useSelector((state) => state);
+
+    console.log('CURRENT PAGE', current_page)
+
+    let all_dogs_sliced = slice_dogs(searchBreed)
 
     try{
         let element_active = document.querySelector(".active")
@@ -15,60 +22,41 @@ function Pagination(current_page) {
     catch(err){
     }
 
-    console.log('SHEARCH BRED EN PAGINATION')
-    console.log(searchBreed)
-    
-    
-    // const nextHandle = (e) => { // Control del boton next
-    //     e.preventDefault();
+    const movePage = (e) => {
+        e.preventDefault();
+        console.log('moviendo pagina')
+    }
 
-    //     if (show.current_page <= 7){
-    //         setShow( prevState => {
-    //             return { ...prevState, current_page: prevState.current_page + 1 }
-    //         })
-    //     }
-    // }
-
-    // const backHandle = (e) => { // Control del boton back
-
-    //     e.preventDefault();
-
-    //     if (show.current_page !== 0) {
-    //         setShow( prevState => {
-    //             return { ...prevState, current_page: prevState.current_page - 1 }
-    //         })
-
-    //     } else {
-    //         setShow( prevState => {
-    //             return { ...prevState, current_page: 0}
-    //         })
-    //     }
-    // }
-
-    // const setPage = (e) => {
-    //     e.preventDefault();
-    //     setShow( prevState => {
-    //         return { ...prevState, current_page: e.target.id}
-    //     })
-    // }
+    const setPage = (e) => {
+        e.preventDefault();
+        dispatch({type: 'SET_PAGE', payload: e.target.id})
+    }
 
     return (
         <>
             <div className='pagination'>
                 <ul>
                     <li>
-                        <a href="/" className="prev">
+                        <a href="/" className="prev" onClick={movePage}>
                             Previous
                         </a>
-                        <a href="/">01</a>
-                        <a href="/" className="active">02</a>
-                        <a href="/">03</a>
-                        <a href="/">04</a>
-                        <a href="/">06</a>
-                        <a href="/">07</a>
-                        <a href="/">07</a>
-                        <a href="/" className="next">Next
-                        </a>
+
+                        {
+                            all_dogs_sliced.map( (dog_part, index) => {
+                                
+                                if (index === current_page){
+                                    return <a id={index} key= {index} href="/" className='active' onClick={setPage}>
+                                    {index+1}
+                                    </a>
+                                }
+
+                                return <a id={index} key= {index} href="/" className='prev' onClick={setPage}>
+                                        {index+1}
+                                        </a>
+                            })
+                        }
+
+                        <a href="/" className="next" onClick={movePage}>Next</a>
                     </li>
                 </ul>
             </div>

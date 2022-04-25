@@ -10,7 +10,7 @@ import { SEARCH_BREEDS } from '../redux/actions/actions'
 
 function Home() {
 
-    console.log('rederizando home')
+    // console.log('rederizando home')
 
     const dispatch = useDispatch();
     const { api_breeds } = useSelector(state => state)

@@ -1,11 +1,8 @@
 import SearchCss from './Search.module.css';
 import SearchImg from '../../assets/images/search.svg';
-// import Cards from '../Cards/Cards.js';
-import { searchBreeds, getBreeds } from "../../redux/actions/index";
-import { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { PERROS_MOSTRAR } from '../../redux/actions/actions.js'
-import {fetchDogbyName} from '../../redux/services/index'
+import { searchBreeds} from "../../redux/actions/index";
+import { useDispatch } from "react-redux";
+
 
 export default function Search() {
 
@@ -15,6 +12,7 @@ export default function Search() {
         e.preventDefault();
         let input = e.target.querySelector('input').value
         dispatch(searchBreeds(input))
+        dispatch({type: 'SET_PAGE', payload: 0})
     }
 
     return (

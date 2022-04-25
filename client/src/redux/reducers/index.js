@@ -1,4 +1,4 @@
-import { GET_BREEDS, GET_BREED_DETAIL, GET_TEMPERAMENTS, SEARCH_BREEDS, PERROS_MOSTRAR } from '../actions/actions.js'
+import { GET_BREEDS, GET_BREED_DETAIL, GET_TEMPERAMENTS, SEARCH_BREEDS, SET_PAGE } from '../actions/actions.js'
 
 const initialState = {
     api_breeds: [],
@@ -6,7 +6,7 @@ const initialState = {
     temperament: [],
     searchBreed: [],
     breedDetail: {},
-    perrosMostrar: [],
+    current_page: 0
 }
 
 export default function reducer(state = initialState, action) {
@@ -36,10 +36,10 @@ export default function reducer(state = initialState, action) {
                 breedDetail: action.payload
             }
 
-        case PERROS_MOSTRAR:
+        case SET_PAGE:
             return {
                 ...state,
-                perrosMostrar: action.payload
+                current_page: action.payload
             }
 
         default: return state

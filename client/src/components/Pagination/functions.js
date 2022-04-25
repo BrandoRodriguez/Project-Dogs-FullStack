@@ -1,7 +1,7 @@
 
 
 export default function slice_dogs(dogs_to_slice){
-
+    
     let new_array = dogs_to_slice.reduce((fake_array, item, index) => { 
 
         const chunk_index = Math.floor(index/8)
