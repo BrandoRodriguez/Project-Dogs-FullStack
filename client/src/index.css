@@ -1,0 +1,237 @@
+body {
+    background-color: #EDEDED;
+    font-family: "GT-Walsheim";
+    letter-spacing: .02rem;
+}
+
+address,
+blockquote,
+body,
+button,
+code,
+dd,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+html,
+input,
+legend,
+li,
+ol,
+p,
+pre,
+table,
+td,
+textarea,
+th,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+*,
+:after,
+:before {
+    box-sizing: border-box;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+
+@font-face {
+    font-display: swap;
+    font-family: "Pacifico";
+    src: url(./assets/fonts/Pacifico.woff2);
+    font-weight: 300;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "GT-Walsheim";
+    src: url(./assets/fonts/GT-Walsheim-Regular.woff2);
+    font-weight: 400;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "GT-Walsheim";
+    src: url(./assets/fonts/GT-Walsheim-Bold.woff2);
+    font-weight: 700;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+}
+
+
+.sections {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 96%;
+    height: 96%;
+    border-radius: 27px;
+    box-shadow: 0px 10px 40px rgb(0 0 0 / 15%);
+    background: linear-gradient(108.99deg, #EF5661 34.13%, #FBBD37 74.99%);
+    overflow-y: auto;
+}
+
+.sections::-webkit-scrollbar {
+    width: 0px;
+}
+
+.sections::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 8px;
+}
+
+@media (min-width: 1024px) {
+
+    .sections {
+        width: 1000px;
+        height: 562.5px;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    .sections {
+        width: 1160px;
+        height: 652.5px;
+    }
+}
+
+@media (min-width: 1400px) {
+
+    .sections {
+        width: 1280px;
+        height: 720px;
+    }
+}
+
+
+.text-xs {
+    font-size: .75rem;
+    /* 12 */
+    line-height: 1rem
+}
+
+.text-sm {
+    font-size: .875rem;
+    /* 14 */
+    line-height: 1.25rem
+}
+
+.text-base {
+    font-size: 1rem;
+    /* 16 */
+    line-height: 1.5rem
+}
+
+.text-lg {
+    font-size: 1.125rem;
+    /* 18 */
+    line-height: 1.75rem
+}
+
+.text-xl {
+    font-size: 1.25rem;
+    /* 20 */
+    line-height: 1.75rem
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+    /* 24 */
+    line-height: 2rem
+}
+
+.text-3xl {
+    font-size: 1.875rem;
+    /* 30 */
+    line-height: 2.25rem
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+    /* 36 */
+    line-height: 2.5rem
+}
+
+.text-5xl {
+    font-size: 3rem;
+    /* 48 */
+    line-height: 1
+}
+
+.text-6xl {
+    font-size: 3.75rem;
+    /* 60 */
+    line-height: 1
+}
+
+.text-7xl {
+    font-size: 4.5rem;
+    /* 72 */
+    line-height: 1
+}
+
+.text-8xl {
+    font-size: 5.5rem;
+    /* 80 */
+    line-height: 1
+}
+
+.text-9xl {
+    font-size: 6rem;
+    /* 96 */
+    line-height: 1
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ma-auto {
+    left: 0;
+    right: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}

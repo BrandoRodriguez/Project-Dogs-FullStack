@@ -1,0 +1,116 @@
+.h1 {
+    color: #fff;
+    letter-spacing: .10rem;
+    font-size: 25px;
+    filter: drop-shadow(2px 2px 2px rgb(68, 1, 19, .2));
+}
+
+.hero_image_wrapper {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.dog_img {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    display: block;
+    background-size: cover;
+    max-height: 350px;
+    z-index: 1;
+    border-radius: 27px;
+    background-position: top;
+}
+
+.content_wrapper {
+    position: absolute;
+    bottom: 40px;
+    left: 5%;
+    width: 90%;
+    z-index: 1;
+}
+
+.a{
+    background: rgb(255,255,255,.1);
+    padding: 15px;
+    align-items: center;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin-bottom: 20px;
+}
+
+.h2 {
+    color: #fff;
+    font-size: 50px;
+    padding-bottom: 50px;
+    line-height: 3.5rem;
+    padding-top: 15px px;
+    font-family: Pacifico;
+    letter-spacing: 0.2rem;
+
+}
+
+.type_background {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    background-color: rgba(255, 255, 230, .2);
+    border-radius: 999px;
+    text-align: center;
+    padding: 10px 5px;
+    text-transform: capitalize;
+    place-self: flex-start;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 1024px) {
+
+    .hero_image_wrapper {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .dog_img {
+        right: 5%;
+        max-width: 500px;
+        max-height: 330px;
+    }
+
+    .content_wrapper {
+        position: absolute;
+        left: 5%;
+        width: 36%;
+    }
+
+    .h3 {
+        font-size: 70px;
+    }
+
+}
+
+@media (min-width: 1280px) {
+
+    .dog_img {
+        max-width: 600px;
+        max-height: 550px;
+    }
+
+}
+
+@media (min-width: 1400px) {
+
+    .dog_img {
+        bottom: 100px;
+    }
+    .content_wrapper {
+        bottom: 100px;
+    }
+
+}

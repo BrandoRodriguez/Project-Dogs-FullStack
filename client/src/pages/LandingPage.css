@@ -1,0 +1,146 @@
+.landing_page {
+    position: relative;
+    height: 100vh;
+    align-items: center;
+    display: flex;
+    overflow: hidden;
+}
+
+.container-landing-page {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 27px;
+    background: linear-gradient(108.99deg, #FFAD15 34.13%, #FFCB14 74.99%);
+    /* transition: all .5s ease 0.2s; */
+}
+
+.container-landing-page::after {
+    content: "";
+    position: absolute;
+    background-image: url(../assets/images/dog1.png);
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+
+}
+
+.container-landing-page::before {
+    content: "";
+    position: absolute;
+    background-image: url(../assets/images/dog1.png);
+    width: 100%;
+    height: 100%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: right;
+    opacity: .08;
+}
+
+.navegation {
+    justify-content: space-between;
+    top: 20px;
+    width: 90%;
+}
+
+.navegation img {
+    display: flex;
+}
+
+.btn_github {
+    border-radius: 100%;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    padding: 6px;
+    background: #7C190F;
+    color: #fff;
+    z-index: 1;
+    position: relative;
+}
+
+.content_wrapper {
+    bottom: 30px;
+    left: 5%;
+    width: 90%;
+    z-index: 1;
+}
+
+.badge {
+    margin-bottom: 1rem;
+    align-items: center;
+    display: flex;
+    gap: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.badge span {
+    padding: 10px 10px;
+    border-radius: 999px;
+    background-color: #fff;
+}
+
+h3 {
+    color: #C80000;
+    font-size: 40px;
+    font-family: Pacifico;
+    line-height: 3.5rem;
+}
+
+.btn_img {
+    transform: rotate(0);
+    transition: transform 700ms cubic-bezier(.68, -.55, .265, 1.55);
+}
+
+.btn_img:hover {
+    transform: rotate(10deg);
+    transition: transform 700ms cubic-bezier(.68, -.55, .265, 1.55);
+}
+
+@media (min-width: 1024px) {
+
+    .navegation {
+        top: 40px;
+    }
+
+    .container-landing-page {
+        width: 1000px;
+        height: 562.5px;
+    }
+
+    .content_wrapper {
+        bottom: 50px;
+        left: 5%;
+        width: 45%;
+    }
+}
+
+@media (min-width: 1280px) {
+
+    .container-landing-page {
+        width: 1160px;
+        height: 652.5px;
+    }
+
+    h3 {
+        font-size: 55px;
+        line-height: 4rem;
+        padding-bottom: 50px;
+    }
+
+}
+
+@media (min-width: 1400px) {
+
+    .container-landing-page {
+        width: 1280px;
+        height: 720px;
+    }
+}
