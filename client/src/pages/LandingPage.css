@@ -4,21 +4,25 @@
     align-items: center;
     display: flex;
     overflow: hidden;
+    background: linear-gradient(108.99deg, #FFAD15 34.13%, #FFCB14 74.99%);
 }
 
-.container-landing-page {
+.container_landing_page {
     position: relative;
     margin-right: auto;
     margin-left: auto;
-    width: 100%;
-    height: 100%;
+    width: 97%;
+    height: 97%;
     overflow: hidden;
     border-radius: 27px;
     background: linear-gradient(108.99deg, #FFAD15 34.13%, #FFCB14 74.99%);
+    /* border: 2px solid #FEFEFD; */
+    box-shadow: 0px 10px 50px rgb(0 0 0 / 27%);
+
     /* transition: all .5s ease 0.2s; */
 }
 
-.container-landing-page::after {
+.container_landing_page::after {
     content: "";
     position: absolute;
     background-image: url(../assets/images/dog1.png);
@@ -26,20 +30,31 @@
     height: 100%;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: right;
-
+    max-width: 276.92px ;
+    max-height: 430px;
+    top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
 }
 
-.container-landing-page::before {
+.container_landing_page::before {
     content: "";
     position: absolute;
-    background-image: url(../assets/images/dog1.png);
+    background-image: url(../assets/images/dog2.png);
     width: 100%;
     height: 100%;
     background-size: auto;
     background-repeat: no-repeat;
-    background-position: right;
-    opacity: .08;
+    background-position: center;
+    max-height: 700px;
+    max-width: 556.54px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+
 }
 
 .navegation {
@@ -79,6 +94,7 @@
     gap: 5px;
     text-transform: uppercase;
     font-weight: 700;
+    font-size: 10px;
 }
 
 .badge span {
@@ -88,10 +104,10 @@
 }
 
 h3 {
-    color: #C80000;
-    font-size: 40px;
+    color: #F20000;
+    font-size: 35px;
     font-family: Pacifico;
-    line-height: 3.5rem;
+    line-height: 3rem;
 }
 
 .btn_img {
@@ -104,43 +120,111 @@ h3 {
     transition: transform 700ms cubic-bezier(.68, -.55, .265, 1.55);
 }
 
+.bg_title {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+}
+
+.title {
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: -.02em;
+    font-size: 60px;
+    font-weight: 700;
+    transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+    color: rgba(255, 255, 255);
+    font-family: 'FuturaBT';
+}
+
+.none{
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .bg_title {
+        transform: rotate(-90deg);
+        transform-origin: left bottom;
+        left: calc(100% - 5px);
+        bottom: 15px;
+        top: auto;
+    }
+}
+
+
 @media (min-width: 1024px) {
 
     .navegation {
         top: 40px;
     }
 
-    .container-landing-page {
+    .container_landing_page {
         width: 1000px;
         height: 562.5px;
     }
 
     .content_wrapper {
-        bottom: 50px;
+        bottom: 40px;
         left: 5%;
-        width: 45%;
+        width: 35%;
+    }
+
+    .content_creator{
+        bottom: 70px;
+        right: 3%;
+        width: 20%;
+    }
+
+    .container_landing_page::after {
+        background-size: contain;
+        background-repeat: no-repeat;
+        max-width: 476.92px ;
+        max-height: 630px;
+        right: 180px;
+        left: auto;
+        top: 20px;
+    }
+
+    .none{
+        display: block;
     }
 }
 
 @media (min-width: 1280px) {
 
-    .container-landing-page {
+    .container_landing_page {
         width: 1160px;
         height: 652.5px;
     }
 
-    h3 {
-        font-size: 55px;
-        line-height: 4rem;
-        padding-bottom: 50px;
+    .container_landing_page::after {
+        right: 300px;
     }
+
+    h3 {
+        font-size: 40px;
+        line-height: 3.5rem;
+        padding-bottom: 20px;
+    }
+
+    .title {
+        font-size: 70px;
+    }
+
 
 }
 
 @media (min-width: 1400px) {
 
-    .container-landing-page {
-        width: 1280px;
-        height: 720px;
+    .container_landing_page {
+        width: 1244px;
+        height: 700px;
+    }
+    
+    h3 {
+        font-size: 55px;
+        line-height: 4rem;
+        padding-bottom: 50px;
     }
 }

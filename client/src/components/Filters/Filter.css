@@ -102,9 +102,9 @@ input:checked + .slider:before {
     margin-bottom: 13px;
 }
 
-span{
+/* span{
     font-size: 13px;
-}
+} */
 
 .ctn{
     display: block;

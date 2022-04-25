@@ -6,14 +6,18 @@ import Pagination from '../components/Pagination/Pagination.jsx'
 function Home() {
     return (
         <>
-            <Header />
-            <section className='cards-section'>
-                <Cards />
-            </section>
-            <Pagination />
-        </>
+            <div className='home'>
+                <div className='container_home'>
+                    <Header />
+                    <section className='cards-section'>
+                        <Cards />
+                    </section>
+                    <Pagination />
+                </div>
+            </div>
+            </>
 
-    );
+            );
 }
 
-export default Home;
+            export default Home;
