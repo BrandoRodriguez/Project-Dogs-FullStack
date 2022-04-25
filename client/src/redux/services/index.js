@@ -17,7 +17,6 @@ async function fetchDogById(id){
 
 async function fetchDogbyName(name){
     let result = await axios.get(`/dogs?name=${name}`)
-    console.log('search',result.data)
     return result.data
 }
 

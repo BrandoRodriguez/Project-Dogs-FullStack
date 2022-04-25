@@ -20,8 +20,6 @@ export function getBreedDetail(id) {
 export function searchBreeds(name){
     return async function(dispatch) {
         let perro = await fetchDogbyName(name)
-        console.log(name)
-        console.log( 'perro', perro)
         dispatch({type: SEARCH_BREEDS, payload: perro})
 
     }

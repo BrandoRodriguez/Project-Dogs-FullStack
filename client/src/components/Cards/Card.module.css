@@ -7,9 +7,9 @@
     cursor: pointer;
 }
 
-.h2{
+.h2 {
     text-align: end;
-    color: rgb(255,255,255,.6);
+    color: rgb(255, 255, 255, .6);
     font-size: 15px;
     font-weight: 500;
 }
@@ -17,28 +17,32 @@
 .description {
     display: flex;
     flex-direction: column;
-    border: 1px solid rgb(255,255,255,.3);
+    border: 1px solid rgb(255, 255, 255, .3);
     padding: 5px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    background-color: rgb(255,255,255,.1);
-} 
+    background-color: rgb(255, 255, 255, .1);
+}
 
-.img{
+.img {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     height: 220px;
     width: 400px;
 }
 
-.h3{
+.h3 {
     margin: 0;
     color: #fff;
     font-size: 18px;
     text-transform: capitalize;
     font-weight: 300;
-    filter: drop-shadow(2px 2px 2px rgb(0,0,0,.1));
+    filter: drop-shadow(2px 2px 2px rgb(0, 0, 0, .1));
     font-family: Pacifico;
+    line-height: 2rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .type {
@@ -52,7 +56,7 @@
     color: #fff;
     font-size: 13px;
     font-weight: 300;
-    background-color: rgba(255,255,230,.4);
+    background-color: rgba(255, 255, 230, .4);
     border-radius: 999px;
     text-align: center;
     padding: 4px 10px;
@@ -60,8 +64,8 @@
     place-self: flex-start;
 }
 
-@media (min-width: 1024px){
-    .h3{
+@media (min-width: 1024px) {
+    .h3 {
         font-size: 20px;
     }
 }

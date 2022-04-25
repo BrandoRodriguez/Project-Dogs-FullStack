@@ -8,12 +8,18 @@ export default function Cards() {
 
     const dispatch = useDispatch();
 
-    const { api_breeds } = useSelector((state) => state);
+    const { api_breeds, searchBreed} = useSelector((state) => state);
+
+    // console.log( 'estado dentro de cards' ,searchBreed)
+
+  
 
 
-    useEffect(() => {
-        dispatch(getBreeds());
-    }, [dispatch]);
+
+
+    // useEffect(() => {
+    //     dispatch(getBreeds());
+    // }, [dispatch]);
 
     // ============================================================================================
 
@@ -31,8 +37,8 @@ export default function Cards() {
     return (
         <>
             <ul className={CardsCss.column_ul}>
-                {api_breeds &&
-                    api_breeds.map((e) => {
+                { searchBreed &&
+                    searchBreed.map((e) => {
                         return (
                             <Card
                                 key={e.id}
