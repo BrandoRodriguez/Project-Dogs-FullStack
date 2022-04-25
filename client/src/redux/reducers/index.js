@@ -10,6 +10,7 @@ const initialState = {
 }
 
 export default function reducer(state = initialState, action) {
+    
     switch (action.type) {
         case GET_BREEDS:
             return {
@@ -38,7 +39,7 @@ export default function reducer(state = initialState, action) {
         case PERROS_MOSTRAR:
             return {
                 ...state,
-                perroMostrar: action.payload
+                perrosMostrar: action.payload
             }
 
         default: return state

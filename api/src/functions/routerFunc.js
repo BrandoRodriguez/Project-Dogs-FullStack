@@ -125,12 +125,18 @@ async function getDogByName(name){
 
     api_dogs_found = await axios.get(`https://api.thedogapi.com/v1/breeds/search?api_key=${API_KEY}&q=${name}`)
     .then( async result => {
-        
+
         result.data.map(dog => {
 
             dog.weight = dog.weight.metric
             dog.height = dog.height.metric
-            dog.image = `https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`
+
+            if (dog.reference_image_id) {
+                dog.image = `https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`
+            } else {
+                // dog.image = 'https://static8.depositphotos.com/1001336/852/i/600/depositphotos_8525222-stock-photo-labrador-silhouette.jpg'
+                dog.image = 'https://img.freepik.com/vector-gratis/silueta-perrosilueta-pata-perrocara-perrosilueta-perro-sentado_622010-18.jpg?w=2000'
+            }
 
             delete dog.bred_for
             delete dog.breed_group

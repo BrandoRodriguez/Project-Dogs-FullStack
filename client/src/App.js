@@ -7,12 +7,15 @@ function App() {
   return (
     <>
       <Switch>
+
         <Route exact path="/">
           <LandingPage />
         </Route>
+
         <Route exact path="/home">
           <Home />
         </Route>
+
         <Route path= "/detail/:id" component={Detail}></Route>
       </Switch>
     </>

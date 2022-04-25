@@ -1,6 +1,9 @@
 import './Pagination.css'
+import { useSelector } from "react-redux";
 
 function Pagination(current_page) {
+
+    const { api_breeds, searchBreed} = useSelector((state) => state);
 
     try{
         let element_active = document.querySelector(".active")
@@ -12,6 +15,10 @@ function Pagination(current_page) {
     catch(err){
     }
 
+    console.log('SHEARCH BRED EN PAGINATION')
+    console.log(searchBreed)
+    
+    
     // const nextHandle = (e) => { // Control del boton next
     //     e.preventDefault();
 
