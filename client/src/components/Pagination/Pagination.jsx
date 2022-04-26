@@ -1,6 +1,7 @@
 import './Pagination.css'
 import { useDispatch, useSelector } from "react-redux";
 import slice_dogs from './functions'
+import {setPage} from '../../redux/actions/index'
 
 function Pagination() {
 
@@ -27,9 +28,9 @@ function Pagination() {
         console.log('moviendo pagina')
     }
 
-    const setPage = (e) => {
+    const changePage = (e) => {
         e.preventDefault();
-        dispatch({type: 'SET_PAGE', payload: e.target.id})
+        dispatch(setPage(e.target.id))
     }
 
     return (
@@ -45,12 +46,12 @@ function Pagination() {
                             all_dogs_sliced.map( (dog_part, index) => {
                                 
                                 if (index === current_page){
-                                    return <a id={index} key= {index} href="/" className='active' onClick={setPage}>
+                                    return <a id={index} key= {index} href="/" className='active' onClick={changePage}>
                                     {index+1}
                                     </a>
                                 }
 
-                                return <a id={index} key= {index} href="/" className='prev' onClick={setPage}>
+                                return <a id={index} key= {index} href="/" className='prev' onClick={changePage}>
                                         {index+1}
                                         </a>
                             })

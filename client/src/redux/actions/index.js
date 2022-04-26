@@ -1,11 +1,12 @@
 
 import { fetchAllDogs, fetchDogById, fetchAllTemperaments, fetchDogbyName } from '../services/index.js'
-import { GET_BREEDS, GET_BREED_DETAIL, GET_TEMPERAMENTS, SEARCH_BREEDS } from '../actions/actions.js'
+import { GET_BREEDS, GET_BREED_DETAIL, GET_TEMPERAMENTS, SEARCH_BREEDS, SET_PAGE } from '../actions/actions.js'
 
 export const getBreeds = () => {
     return async function(dispatch){
         let all_dogs = await fetchAllDogs()
         dispatch({  type: GET_BREEDS, payload: all_dogs  })
+        dispatch({  type: SEARCH_BREEDS, payload: all_dogs  })
     }
 }
 
@@ -30,4 +31,9 @@ export const getTemperaments = () => {
     }
 }
 
+export const setPage = (page) => {
+    return function (dispatch){
+        dispatch({type: SET_PAGE, payload: page})
+    }
+}
 
