@@ -31,23 +31,26 @@ function Detail() {
 
     return (
         <>
-            <div className={DetailsCss.hero_image_wrapper}>
-                <span style={bgpokemon} className={DetailsCss.dog_img}>
-                </span>
-            </div>
+            <div className='home'>
+                <div className='container_home'>
+                <div className={DetailsCss.hero_image_wrapper}>
+                    <span style={bgpokemon} className={DetailsCss.dog_img}>
+                    </span>
+                </div>
 
-            <div className={DetailsCss.content_wrapper}>
-                <Link to="/home">
-                    <img className={DetailsCss.a} src={flecha} alt="" />
-                </Link>
-                <h2 className={DetailsCss.h2}>{detail.name}</h2>
-                <div>
-                    <h3 className={DetailsCss.type_background}>Temperament:  {detail.temperament}</h3>
-                    <h3 className={DetailsCss.type_background}>Life Span: {detail.life_span}</h3>
-                    <h3 className={DetailsCss.type_background}>Weight: {detail.weight}</h3>
+                <div className={DetailsCss.content_wrapper}>
+                    <Link to="/home">
+                        <img className={DetailsCss.a} src={flecha} alt="" />
+                    </Link>
+                    <h2 className={DetailsCss.h2}>{detail.name}</h2>
+                    <div>
+                        <h3 className={DetailsCss.type_background}>Temperament:  {detail.temperament}</h3>
+                        <h3 className={DetailsCss.type_background}>Life Span: {detail.life_span}</h3>
+                        <h3 className={DetailsCss.type_background}>Weight: {detail.weight}</h3>
+                    </div>
                 </div>
             </div>
-
+        </div>
         </>
 
     );

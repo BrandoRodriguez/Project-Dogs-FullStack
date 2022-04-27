@@ -12,9 +12,10 @@ function Card(props) {
                         alt="@brandorodriguez"
                     />
                     <div className={CardCss.description}>
-                        <h3 className={CardCss.h3}>{props.name}</h3>
+                        <h2 className={CardCss.h3_card}>{props.name}</h2>
                         <div className={CardCss.type}>
-                            <span className={CardCss.type_background}>{props.temperament}</span>
+                            <span className={CardCss.type_background}>Temperaments: {props.temperament}</span>
+                            <span className={CardCss.type_background}>Weight: {props.weight}</span>
                         </div>
                     </div>
                 </div>

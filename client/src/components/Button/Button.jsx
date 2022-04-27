@@ -1,8 +1,8 @@
 import './Button.css'
-function Button() {
+function Button({name}) {
     return (
         <div>
-            <button className='button' href="/">Create New Dog.</button>
+            <button className='button' href="/">{name}</button>
         </div>
     );
 

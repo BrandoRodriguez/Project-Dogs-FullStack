@@ -1,6 +1,7 @@
 .ctn_filter{
     display: flex;
     gap: 5px;
+    justify-content: space-between;
 }
 
 .filter{
@@ -111,7 +112,7 @@ input:checked + .slider:before {
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .filter{
         margin-bottom: 0;   
     }

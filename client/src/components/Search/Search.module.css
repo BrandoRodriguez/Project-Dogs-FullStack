@@ -1,17 +1,12 @@
-/* .container{
-    max-width: 100%;
-    padding-left: 17px;
-    padding-right: 17px;
-} */
-
-.search_form {
-    height: 58px;
-    width: 960px;
-    max-width: 100%;
-}
-
 .search_form {
     width: 100%;
+    padding-bottom: 15px;
+}
+
+.container_search{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 .label {
@@ -53,3 +48,10 @@ input::placeholder{
 }
 
 input:focus{ outline: none;}
+
+@media (min-width: 1024px) {
+    .search_form {
+        width: 30%;
+        padding-bottom: 0;
+    }
+}
