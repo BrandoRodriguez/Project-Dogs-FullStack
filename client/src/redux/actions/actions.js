@@ -2,4 +2,7 @@ export const GET_BREEDS = 'GET_BREEDS'
 export const GET_TEMPERAMENTS = 'GET_TEMPERAMENTS';
 export const SEARCH_BREEDS = 'SEARCH_BREEDS'
 export const GET_BREED_DETAIL = 'GET_BREED_DETAIL'
+
 export const SET_PAGE = 'SET_PAGE'
+export const SET_ORDER = 'SET_ORDER'
+export const SET_TEMPERAMENT = 'SET_TEMPERAMENT'

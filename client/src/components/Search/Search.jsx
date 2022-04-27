@@ -12,7 +12,6 @@ export default function Search() {
         console.log('entrando en search')
         let input = e.target.querySelector('input').value
         dispatch(searchBreeds(input))
-        // dispatch({type: 'SET_PAGE', payload: 0})
         dispatch(setPage(0))
     }
 

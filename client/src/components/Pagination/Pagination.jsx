@@ -9,9 +9,9 @@ function Pagination() {
 
     const { searchBreed, current_page} = useSelector((state) => state);
 
-    console.log('CURRENT PAGE', current_page)
-
     let all_dogs_sliced = slice_dogs(searchBreed)
+    
+    console.log('CURRENT PAGE', current_page)
 
     try{
         let element_active = document.querySelector(".active")
