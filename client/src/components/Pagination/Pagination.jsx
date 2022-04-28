@@ -5,7 +5,6 @@ import {setPage} from '../../redux/actions/index'
 function Pagination() {
 
     const dispatch = useDispatch()
-
     const { searchBreed, current_page} = useSelector((state) => state);
 
     console.log('CURRENT PAGE', current_page)

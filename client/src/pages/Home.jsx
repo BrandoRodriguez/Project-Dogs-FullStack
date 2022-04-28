@@ -13,15 +13,10 @@ function Home() {
     console.log('rederizando home')
 
     const dispatch = useDispatch();
-
-    const {
-        current_order, current_weight,
-        current_temperament } = useSelector(state => state)
+    const {current_order, current_weight, current_temperament} = useSelector(state => state)
 
     useEffect(() => {
-
-        dispatch(getBreeds(current_order, current_weight,current_temperament));
-
+        dispatch(getBreeds(current_order, current_weight, current_temperament));
     }, [dispatch, current_order, current_weight, current_temperament]);
 
     useEffect(() => {

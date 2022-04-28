@@ -10,16 +10,16 @@ import {
     SET_SERVER
 } from '../actions/actions.js'
 
-export const getBreeds = (order_value, weight_value, temperament_value ) => {
+export const getBreeds = (current_order, current_weight, current_temperament) => {
     return async function (dispatch) {
 
         let all_dogs = await fetchAllDogs()
 
-        let filtering_dogs = orderName(all_dogs, order_value)
-        filtering_dogs = orderWeight(filtering_dogs, weight_value)
-        filtering_dogs = filter_temperament(filtering_dogs, temperament_value)
+        let filtering_dogs = orderName(all_dogs, current_order)
+        filtering_dogs = orderWeight(filtering_dogs, current_weight)
+        filtering_dogs = filter_temperament(filtering_dogs, current_temperament)
         filtering_dogs = slice_dogs(filtering_dogs)
- 
+
         dispatch({ type: GET_BREEDS, payload: all_dogs })
         dispatch({ type: SEARCH_BREEDS, payload: filtering_dogs })
 
@@ -33,13 +33,14 @@ export function getBreedDetail(id) {
     }
 }
 
-export function searchBreeds(name, order_value, weight_value, temperament_value) {
+export function searchBreeds(name, current_order, current_weight, current_temperament ) {
     return async function (dispatch) {
+
         let all_dogs = await fetchDogbyName(name)
 
-        let filtering_dogs = orderName(all_dogs, order_value)
-        filtering_dogs = orderWeight(filtering_dogs, weight_value)
-        filtering_dogs = filter_temperament(filtering_dogs, temperament_value)
+        let filtering_dogs = orderName(all_dogs, current_order)
+        filtering_dogs = orderWeight(filtering_dogs, current_weight)
+        filtering_dogs = filter_temperament(filtering_dogs, current_temperament)
         filtering_dogs = slice_dogs(filtering_dogs)
 
         dispatch({ type: SEARCH_BREEDS, payload: filtering_dogs })
