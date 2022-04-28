@@ -1,6 +1,6 @@
 import { GET_BREEDS, GET_BREED_DETAIL, 
     GET_TEMPERAMENTS, SEARCH_BREEDS, 
-    SET_PAGE, SET_ORDER, SET_TEMPERAMENT} from '../actions/actions.js'
+    SET_PAGE, SET_ORDER, SET_TEMPERAMENT, SET_SERVER, SET_WEIGHT} from '../actions/actions.js'
 
 const initialState = {
     api_breeds: [],
@@ -9,7 +9,9 @@ const initialState = {
     searchBreed: [],
     breedDetail: {},
     current_page: 0,
+    current_server: 'API',
     current_order: 'ASC name',
+    current_weight: 'Default',
     current_temperament: 'All'
 }
 
@@ -57,6 +59,18 @@ export default function reducer(state = initialState, action) {
                 ...state,
                 current_temperament: action.payload
             }
+        
+        case SET_SERVER:
+            return {
+                ...state,
+                current_server: action.payload
+            }
+
+        case SET_WEIGHT:
+            return {
+                ...state,
+                current_weight: action.payload
+            } 
 
         default: return state
     }

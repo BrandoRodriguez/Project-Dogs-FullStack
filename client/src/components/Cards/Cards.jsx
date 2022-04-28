@@ -4,13 +4,15 @@ import { useSelector } from "react-redux";
 
 export default function Cards() {
 
-    const { searchBreed } = useSelector((state) => state);
+    const { searchBreed, current_page } = useSelector((state) => state);
+
+    let show_dogs = searchBreed[current_page]
 
     return (
         <>
             <ul className={CardsCss.column_ul}>
-                { searchBreed &&
-                    searchBreed.map((e) => {
+                { show_dogs &&
+                    show_dogs.map((e) => {
                         return (
                             <Card
                                 key={e.id}

@@ -5,24 +5,28 @@ import Pagination from '../components/Pagination/Pagination.jsx'
 import Search from '../components/Search/Search.jsx'
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react"
-import { getBreeds, getTemperaments} from '../redux/actions/index'
-import { slice_dogs } from './functions'
+import { getBreeds, getTemperaments } from '../redux/actions/index'
+
 
 function Home() {
 
     console.log('rederizando home')
 
     const dispatch = useDispatch();
-    const {searchBreed} = useSelector(state => state)
+
+    const {
+        current_order, current_weight,
+        current_temperament } = useSelector(state => state)
 
     useEffect(() => {
-        dispatch(getBreeds());
-        let all_dogs_sliced = slice_dogs(searchBreed)
-        dispatch({type: 'SEARCH_BREEDS', payload: all_dogs_sliced})
+
+        dispatch(getBreeds(current_order, current_weight,current_temperament));
+
+    }, [dispatch, current_order, current_weight, current_temperament]);
+
+    useEffect(() => {
         dispatch(getTemperaments());
-
-
-    }, [dispatch, searchBreed]);
+    }, [dispatch]);
 
     return (
         <>
@@ -37,7 +41,6 @@ function Home() {
                 </div>
             </div>
         </>
-
     );
 }
 

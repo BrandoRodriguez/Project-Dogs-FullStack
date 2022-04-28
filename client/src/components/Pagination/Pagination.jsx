@@ -1,6 +1,5 @@
 import './Pagination.css'
 import { useDispatch, useSelector } from "react-redux";
-import slice_dogs from './functions'
 import {setPage} from '../../redux/actions/index'
 
 function Pagination() {
@@ -9,8 +8,6 @@ function Pagination() {
 
     const { searchBreed, current_page} = useSelector((state) => state);
 
-    let all_dogs_sliced = slice_dogs(searchBreed)
-    
     console.log('CURRENT PAGE', current_page)
 
     try{
@@ -43,7 +40,7 @@ function Pagination() {
                         </a>
 
                         {
-                            all_dogs_sliced.map( (dog_part, index) => {
+                            searchBreed.map( (dog_part, index) => {
                                 
                                 if (index === current_page){
                                     return <a id={index} key= {index} href="/" className='active' onClick={changePage}>
