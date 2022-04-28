@@ -15,6 +15,8 @@ export const getBreeds = (current_order, current_weight, current_temperament) =>
 
         let all_dogs = await fetchAllDogs()
 
+        console.log(all_dogs)
+
         let filtering_dogs = orderName(all_dogs, current_order)
         filtering_dogs = orderWeight(filtering_dogs, current_weight)
         filtering_dogs = filter_temperament(filtering_dogs, current_temperament)

@@ -4,6 +4,7 @@ const {Race, Temper, API_KEY } = require('../db.js');
 function filterData(data){
 
     filteredDogs = data.map( dog => {
+        console.log(dog.id, dog.weight.metric)
         return {
             name: dog.name,
             temperament: dog.temperament,

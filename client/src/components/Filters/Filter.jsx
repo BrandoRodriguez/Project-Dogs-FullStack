@@ -22,7 +22,8 @@ function Filter() {
             <div className='ctn'>
                 <div className='ctn_filter'>
                     <select className='filter' id='filter' name='name' onChange={changeOrder}>
-                        <option>Order</option>
+                        <option value='ASC name'>Order</option>
+
                         <option value='ASC name'>A-Z</option>
                         <option value='DESC name'>Z-A</option>
                         <option value='ASC weight'>Weight: Low to High</option>
@@ -30,7 +31,7 @@ function Filter() {
                     </select>
 
                     <select className='filter' name='name' onChange={changeTemperament}>
-                        <option value='all'>Temperament</option>
+                        <option value='All'>Temperament</option>
 
                         {
                             temperament.map(temperament => {

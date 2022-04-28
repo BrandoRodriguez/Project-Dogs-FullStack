@@ -37,7 +37,7 @@
     font-size: 18px;
     text-transform: capitalize;
     font-weight: 300;
-    filter: drop-shadow(2px 2px 2px rgb(0, 0, 0, .1));
+    filter: drop-shadow(2px 2px 2px rgb(0, 0, 0, .4));
     font-family: Pacifico;
     line-height: 2rem;
     text-overflow: ellipsis;
@@ -45,11 +45,22 @@
     white-space: nowrap;
 }
 
+.h5 {
+    color: #f3c666;
+    font-family: 'Kristen ITC';
+    line-height: 2rem;
+    filter: drop-shadow(2px 2px 2px rgb(0, 0, 0, .5));
+    /* font-weight: 1000; */
+}
+
 .type {
     display: flex;
     flex-direction: column;
     padding-top: 12px;
     grid-gap: 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /* white-space: nowrap; */
 }
 
 .type_background {

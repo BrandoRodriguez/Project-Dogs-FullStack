@@ -20,6 +20,7 @@ export default function Cards() {
                                 image={e.image}
                                 temperament={e.temperament}
                                 id={e.id}
+                                weight= {e.weight}
                             />
                         );
                     })}

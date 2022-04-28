@@ -7,8 +7,6 @@ function Pagination() {
     const dispatch = useDispatch()
     const { searchBreed, current_page} = useSelector((state) => state);
 
-    console.log('CURRENT PAGE', current_page)
-
     try{
         let element_active = document.querySelector(".active")
         element_active.className = 'prev';
@@ -21,12 +19,24 @@ function Pagination() {
 
     const movePage = (e) => {
         e.preventDefault();
-        console.log('moviendo pagina')
+
+        if (e.target.className === 'prev'){
+
+            if (current_page !== 0)
+                dispatch(setPage(parseInt(current_page) - 1))
+
+        }
+        else if (e.target.className === 'next'){
+
+            if (current_page !== searchBreed.length - 1)
+                dispatch(setPage(parseInt(current_page) + 1))
+
+        }
     }
 
     const changePage = (e) => {
         e.preventDefault();
-        dispatch(setPage(e.target.id))
+        dispatch(setPage(parseInt(e.target.id)))
     }
 
     return (

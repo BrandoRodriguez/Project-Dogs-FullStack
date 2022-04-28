@@ -10,7 +10,7 @@ import { getBreeds, getTemperaments } from '../redux/actions/index'
 
 function Home() {
 
-    console.log('rederizando home')
+    // console.log('rederizando home')
 
     const dispatch = useDispatch();
     const {current_order, current_weight, current_temperament} = useSelector(state => state)
